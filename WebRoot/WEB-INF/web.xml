@@ -1,0 +1,4284 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+	<display-name>WebApp</display-name>
+	<listener>
+		<listener-class>
+			org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>
+	<listener>
+		<listener-class>
+			org.springframework.web.context.request.RequestContextListener
+		</listener-class>
+	</listener>
+	<filter>
+		<description>generated-persistence-filter</description>
+		<filter-name>OracleFilter</filter-name>
+		<filter-class>
+			org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter
+		</filter-class>
+		<init-param>
+			<param-name>entityManagerFactoryBeanName</param-name>
+			<param-value>Oracle</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<description>generated-sitemesh-filter</description>
+		<filter-name>Sitemesh Filter</filter-name>
+		<filter-class>
+			com.opensymphony.module.sitemesh.filter.PageFilter
+		</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>OracleFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Sitemesh Filter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<servlet>
+		<description>generated-servlet</description>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<servlet-class>
+			org.springframework.web.servlet.DispatcherServlet
+		</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:WebApp-web-context.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<description>generated-resources-servlet</description>
+		<servlet-name>Resource Servlet</servlet-name>
+		<servlet-class>
+			org.springframework.js.resource.ResourceServlet
+		</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Resource Servlet</servlet-name>
+		<url-pattern>/resources/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>*.action</url-pattern>
+		
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectVendorOrganizationsCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveVendorOrganizationsIndCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteVendorOrganizationsIndCities
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteVendorOrganizationsUsCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveVendorOrganizationsUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editVendorOrganizationsUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listVendorOrganizationsUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectVendorOrganizationsUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editVendorOrganizationsCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteVendorOrganizationsIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteVendorOrganizationsUsCounties
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteVendorOrganizationsCountries
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listVendorOrganizationsIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editVendorOrganizationsIndCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteVendorOrganizationsUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editVendorOrganizations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectVendorOrganizationsUsCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newVendorOrganizationsIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newVendorOrganizationsUsCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteVendorOrganizationsUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listVendorOrganizationsIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newVendorOrganizationsUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteVendorOrganizationsUsStates
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newVendorOrganizationsIndCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/indexVendorOrganizations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveVendorOrganizationsIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteVendorOrganizations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editVendorOrganizationsIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveVendorOrganizationsUsCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editVendorOrganizationsUsCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteVendorOrganizations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteVendorOrganizationsIndStates
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectVendorOrganizationsUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editVendorOrganizationsIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveVendorOrganizationsIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteVendorOrganizationsUsCities
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteVendorOrganizationsCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listVendorOrganizationsCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listVendorOrganizationsIndCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newVendorOrganizationsIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listVendorOrganizationsUsCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectVendorOrganizationsIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listVendorOrganizationsUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveVendorOrganizationsCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteVendorOrganizationsIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteVendorOrganizationsIndDistrict
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newVendorOrganizationsUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newVendorOrganizationsCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveVendorOrganizationsUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectVendorOrganizationsIndCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectVendorOrganizations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveVendorOrganizations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newVendorOrganizations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectVendorOrganizationsIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editVendorOrganizationsUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteVendorOrganizationsIndCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listProductsRatingCustomerProfile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editProductsRating</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteProductsRatingProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteProductsRating</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/deleteProductsRatingProductsFeedbacks
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newProductsRatingProductsFeedbacks</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveProductsRatingProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectProductsRatingCustomerProfile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listProductsRatingProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteProductsRatingCustomerProfile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editProductsRatingProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteProductsRatingProductsFeedbacks
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveProductsRatingCustomerProfile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectProductsRatingProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveProductsRatingProductsFeedbacks</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/indexProductsRating</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveProductsRating</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listProductsRatingProductsFeedbacks</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editProductsRatingCustomerProfile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newProductsRating</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newProductsRatingProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectProductsRating</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteProductsRatingProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editProductsRatingProductsFeedbacks</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/selectProductsRatingProductsFeedbacks
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newProductsRatingCustomerProfile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteProductsRating</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteProductsRatingCustomerProfile
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editIndStatesCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteIndStatesRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editIndStatesVendorLocationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteIndStatesCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/indexIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteIndStatesCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listIndStatesVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listIndStatesRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editIndStatesIndCitieses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteIndStatesCustomerProfiles
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveIndStatesVendorLocationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteIndStatesVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectIndStatesIndDistricts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteIndStatesIndCitieses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newIndStatesIndCitieses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newIndStatesCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newIndStatesCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteIndStatesIndDistricts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteIndStatesCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveIndStatesCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newIndStatesIndDistricts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newIndStatesVendorLocationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectIndStatesCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteIndStatesVendorLocationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listIndStatesCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectIndStatesIndCitieses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveIndStatesIndDistricts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editIndStatesIndDistricts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectIndStatesVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listIndStatesIndCitieses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newIndStatesVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteIndStatesRecipientLocations
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveIndStatesCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listIndStatesVendorLocationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteIndStatesVendorOrganizationses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newIndStatesRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listIndStatesIndDistricts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listIndStatesCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editIndStatesVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteIndStatesVendorLocationses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveIndStatesVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveIndStatesRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteIndStatesIndDistricts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveIndStatesIndCitieses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectIndStatesCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editIndStatesRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editIndStatesCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectIndStatesVendorLocationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectIndStatesRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteIndStatesIndCitieses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newRecipientLocationCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectRecipientLocationUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listRecipientLocationUsCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectRecipientLocationCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listRecipientLocationUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newRecipientLocationIndCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/deleteRecipientLocationShipmentDetailses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newRecipientLocationUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/editRecipientLocationShipmentDetailses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveRecipientLocationUsCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newRecipientLocation</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listRecipientLocationIndCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteRecipientLocationShipmentDetailses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectRecipientLocationIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteRecipientLocation</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectRecipientLocation</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listRecipientLocationIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/newRecipientLocationShipmentDetailses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectRecipientLocationUsCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectRecipientLocationIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/indexRecipientLocation</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteRecipientLocationIndCities
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteRecipientLocationIndDistrict
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editRecipientLocationIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveRecipientLocationIndCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveRecipientLocationIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/saveRecipientLocationShipmentDetailses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editRecipientLocationIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteRecipientLocationUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newRecipientLocationUsCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteRecipientLocationCountries
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editRecipientLocationIndCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listRecipientLocationCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteRecipientLocationUsCounties
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectRecipientLocationIndCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listRecipientLocationUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editRecipientLocation</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/selectRecipientLocationShipmentDetailses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newRecipientLocationIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newRecipientLocationIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteRecipientLocationUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveRecipientLocation</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteRecipientLocationUsStates
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteRecipientLocationUsCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editRecipientLocationUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listRecipientLocationIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteRecipientLocationIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editRecipientLocationUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveRecipientLocationUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteRecipientLocationUsCities
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/listRecipientLocationShipmentDetailses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectRecipientLocationUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteRecipientLocationIndStates
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveRecipientLocationCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editRecipientLocationUsCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newRecipientLocationUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteRecipientLocation</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editRecipientLocationCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteRecipientLocationIndCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveRecipientLocationUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteRecipientLocationCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveRecipientLocationIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteRecipientLocationIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteUserRole</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteUserRoleVendorProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteUserRoleCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectUserRoleVendorProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectUserRole</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectUserRoleCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editUserRoleCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteUserRoleVendorProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteUserRoleCustomerProfiles
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newUserRoleCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveUserRoleCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteUserRole</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/indexUserRole</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editUserRoleVendorProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveUserRole</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listUserRoleVendorProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newUserRole</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveUserRoleVendorProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newUserRoleVendorProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listUserRoleCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editUserRole</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectUsStatesVendorLocationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveUsStatesUsCountieses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveUsStatesCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newUsStatesRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteUsStatesUsCountieses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveUsStatesVendorLocationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteUsStatesRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveUsStatesRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteUsStatesUsCitieses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newUsStatesVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteUsStatesCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteUsStatesVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newUsStatesVendorLocationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editUsStatesUsCountieses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectUsStatesVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listUsStatesUsCitieses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listUsStatesCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listUsStatesRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteUsStatesUsCountieses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listUsStatesCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listUsStatesVendorLocationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newUsStatesUsCitieses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteUsStatesVendorLocationses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editUsStatesCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteUsStatesUsCitieses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newUsStatesCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editUsStatesCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteUsStatesVendorLocationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listUsStatesUsCountieses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteUsStatesCustomerProfiles
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editUsStatesVendorLocationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listUsStatesVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectUsStatesUsCountieses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteUsStatesCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editUsStatesRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editUsStatesVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/indexUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectUsStatesUsCitieses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveUsStatesUsCitieses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newUsStatesUsCountieses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectUsStatesCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveUsStatesCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectUsStatesCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteUsStatesVendorOrganizationses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editUsStatesUsCitieses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteUsStatesCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newUsStatesCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteUsStatesRecipientLocations
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectUsStatesRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveUsStatesVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteOrderRequestShipmentDetailses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newOrderRequestShipmentDetailses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newOrderRequestOrderedItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/indexOrderRequest</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/deleteOrderRequestOrderRequestStatuses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/selectOrderRequestOrderRequestStatuses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveOrderRequest</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectOrderRequestShipmentDetailses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteOrderRequestOrderRequestStatuses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listOrderRequestOrderRequestStatuses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newOrderRequestOrderRequestStatuses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveOrderRequestShipmentDetailses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteOrderRequest</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteOrderRequestOrderedItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listOrderRequestShipmentDetailses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteOrderRequestShipmentDetailses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editOrderRequestOrderRequestStatuses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteOrderRequest</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editOrderRequest</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectOrderRequestOrderedItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveOrderRequestOrderedItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newOrderRequest</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveOrderRequestOrderRequestStatuses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editOrderRequestShipmentDetailses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectOrderRequest</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editOrderRequestOrderedItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteOrderRequestOrderedItemses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listOrderRequestOrderedItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newProductImagesProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/indexProductImages</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectProductImagesProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteProductImagesCartItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectProductImagesCartItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listProductImagesCartItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editProductImages</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteProductImages</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editProductImagesCartItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectProductImages</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteProductImages</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteProductImagesProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveProductImagesProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editProductImagesProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveProductImages</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveProductImagesCartItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteProductImagesCartItemses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteProductImagesProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newProductImagesCartItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newProductImages</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listProductImagesProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newVendorProfileProductses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editVendorProfileProductses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteVendorProfile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/deleteVendorProfileVendorLocationAssociationses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteVendorProfileVendorLocationAssociationses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectVendorProfileUserRole</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteVendorProfileProductses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/selectVendorProfileVendorLocationAssociationses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editVendorProfile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/indexVendorProfile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/newVendorProfileVendorLocationAssociationses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newVendorProfile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/editVendorProfileVendorLocationAssociationses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectVendorProfileProductses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveVendorProfile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listVendorProfileProductses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteVendorProfileProductses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newVendorProfileUserRole</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteVendorProfileUserRole</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteVendorProfile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listVendorProfileUserRole</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveVendorProfileUserRole</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectVendorProfile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteVendorProfileUserRole</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/saveVendorProfileVendorLocationAssociationses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editVendorProfileUserRole</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/listVendorProfileVendorLocationAssociationses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveVendorProfileProductses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveUsCitiesUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectUsCitiesVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteUsCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newUsCitiesCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteUsCitiesCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newUsCitiesVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listUsCitiesRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectUsCitiesCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/indexUsCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listUsCitiesVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectUsCitiesVendorLocationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectUsCitiesUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectUsCitiesUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editUsCitiesVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listUsCitiesUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteUsCitiesUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteUsCitiesCustomerProfiles
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectUsCitiesRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listUsCitiesVendorLocationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newUsCitiesRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editUsCitiesVendorLocationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteUsCitiesVendorOrganizationses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editUsCitiesCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listUsCitiesCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveUsCitiesVendorLocationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveUsCitiesUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveUsCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteUsCitiesUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newUsCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectUsCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteUsCitiesRecipientLocations
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newUsCitiesUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editUsCitiesUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteUsCitiesVendorLocationses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveUsCitiesRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editUsCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveUsCitiesCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteUsCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteUsCitiesVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteUsCitiesVendorLocationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteUsCitiesUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveUsCitiesVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newUsCitiesVendorLocationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listUsCitiesUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteUsCitiesRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newUsCitiesUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editUsCitiesUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteUsCitiesUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editUsCitiesRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteProductsDescriptionProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editProductsDescriptionProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectProductsDescriptionProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteProductsDescription</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editProductsDescriptionCartItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteProductsDescriptionCartItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectProductsDescription</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveProductsDescription</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteProductsDescription</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveProductsDescriptionCartItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveProductsDescriptionProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteProductsDescriptionCartItemses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectProductsDescriptionCartItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/indexProductsDescription</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newProductsDescription</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newProductsDescriptionProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editProductsDescription</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteProductsDescriptionProducts
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listProductsDescriptionProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newProductsDescriptionCartItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listProductsDescriptionCartItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listVendorLocationsUsCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteVendorLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectVendorLocationsCartItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectVendorLocationsIndCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteVendorLocationsUsCounties
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editVendorLocationsCartItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveVendorLocationsProductses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteVendorLocationsProductses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editVendorLocationsUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listVendorLocationsUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newVendorLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editVendorLocationsIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteVendorLocationsUsCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newVendorLocationsCartItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/indexVendorLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteVendorLocationsIndCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveVendorLocationsUsCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteVendorLocationsCartItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveVendorLocationsUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteVendorLocationsUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectVendorLocationsUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveVendorLocationsIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveVendorLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listVendorLocationsIndCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listVendorLocationsCartItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteVendorLocationsIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveVendorLocationsIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listVendorLocationsUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveVendorLocationsIndCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteVendorLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectVendorLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editVendorLocationsProductses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newVendorLocationsIndCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editVendorLocationsUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteVendorLocationsIndDistrict
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteVendorLocationsIndStates
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listVendorLocationsIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newVendorLocationsUsCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteVendorLocationsIndCities
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveVendorLocationsCartItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteVendorLocationsUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteVendorLocationsProductses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newVendorLocationsUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectVendorLocationsUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editVendorLocationsUsCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectVendorLocationsIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectVendorLocationsIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectVendorLocationsUsCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveVendorLocationsUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteVendorLocationsIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editVendorLocationsIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteVendorLocationsUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editVendorLocationsIndCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteVendorLocationsCartItemses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newVendorLocationsUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectVendorLocationsProductses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newVendorLocationsIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteVendorLocationsUsCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editVendorLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newVendorLocationsProductses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newVendorLocationsIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listVendorLocationsIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listVendorLocationsProductses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectVendorLocationAssociations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/saveVendorLocationAssociationsVendorProfile
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveVendorLocationAssociations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteVendorLocationAssociations
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/editVendorLocationAssociationsVendorProfile
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editVendorLocationAssociations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/newVendorLocationAssociationsVendorProfile
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/deleteVendorLocationAssociationsVendorProfile
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/indexVendorLocationAssociations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteVendorLocationAssociations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newVendorLocationAssociations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/selectVendorLocationAssociationsVendorProfile
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteVendorLocationAssociationsVendorProfile
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/listVendorLocationAssociationsVendorProfile
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectCountriesUsStateses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveCountriesUsStateses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newCountriesUsStateses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newCountriesRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editCountriesIndStateses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newCountriesVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listCountriesUsStateses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveCountriesRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteCountriesVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteCountriesUsStateses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newCountriesIndStateses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editCountriesCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteCountriesIndStateses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectCountriesIndStateses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listCountriesVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editCountriesRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectCountriesRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveCountriesCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveCountriesIndStateses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteCountriesCustomerProfiles
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/indexCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteCountriesIndStateses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editCountriesUsStateses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newCountriesCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectCountriesCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectCountriesVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteCountriesVendorOrganizationses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteCountriesRecipientLocations
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listCountriesRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listCountriesIndStateses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listCountriesCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteCountriesRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveCountriesVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteCountriesUsStateses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteCountriesCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editCountriesVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editProductsFeedbackProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteProductsFeedbackProductsRating</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editProductsFeedback</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveProductsFeedback</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newProductsFeedback</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteProductsFeedback</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteProductsFeedbackProductsRating
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newProductsFeedbackProductsRating</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listProductsFeedbackProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteProductsFeedback</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectProductsFeedbackProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectProductsFeedbackProductsRating</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveProductsFeedbackProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newProductsFeedbackProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editProductsFeedbackProductsRating</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectProductsFeedback</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteProductsFeedbackProducts
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteProductsFeedbackProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/indexProductsFeedback</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveProductsFeedbackProductsRating</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listProductsFeedbackProductsRating</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveCustomerProfileProductsRatings</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newCustomerProfileIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectCustomerProfileUsCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editCustomerProfileCartItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newCustomerProfile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectCustomerProfileUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listCustomerProfileUserRole</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteCustomerProfileCountries
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listCustomerProfileIndCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectCustomerProfileIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteCustomerProfileIndStates
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectCustomerProfileUserRole</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteCustomerProfileUsCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteCustomerProfileUsCounties
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteCustomerProfileProductsRatings
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/indexCustomerProfile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectCustomerProfileCartItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveCustomerProfile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteCustomerProfileUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteCustomerProfileUsCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveCustomerProfileUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteCustomerProfileUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listCustomerProfileIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listCustomerProfileProductsRatings</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listCustomerProfileUsCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listCustomerProfileIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editCustomerProfileUsCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveCustomerProfileCartItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectCustomerProfile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listCustomerProfileCartItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editCustomerProfileIndCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newCustomerProfileUsCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editCustomerProfileProductsRatings</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newCustomerProfileIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newCustomerProfileCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteCustomerProfile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteCustomerProfileProductsRatings</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listCustomerProfileCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectCustomerProfileUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newCustomerProfileUserRole</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteCustomerProfileUserRole</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveCustomerProfileUsCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editCustomerProfileIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteCustomerProfileIndDistrict
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteCustomerProfileIndCities
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteCustomerProfileUserRole</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listCustomerProfileUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editCustomerProfileUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editCustomerProfileUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteCustomerProfile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveCustomerProfileCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newCustomerProfileUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newCustomerProfileIndCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectCustomerProfileIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteCustomerProfileCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteCustomerProfileIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteCustomerProfileIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveCustomerProfileUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveCustomerProfileIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteCustomerProfileCartItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteCustomerProfileIndCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newCustomerProfileCartItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectCustomerProfileProductsRatings</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editCustomerProfileIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listCustomerProfileUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveCustomerProfileUserRole</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editCustomerProfileUserRole</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteCustomerProfileCartItemses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveCustomerProfileIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newCustomerProfileProductsRatings</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editCustomerProfile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectCustomerProfileIndCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectCustomerProfileCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveCustomerProfileIndCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editCustomerProfileCountries</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteCustomerProfileUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newCustomerProfileUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveCartItemsVendorLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectCartItems</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newCartItemsProductsDescription</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listCartItemsVendorLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveCartItems</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newCartItemsOrderedItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectCartItemsProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listCartItemsProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listCartItemsOrderedItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectCartItemsOrderedItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listCartItemsProductsDescription</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editCartItemsCustomerProfile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteCartItemsProductImages</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveCartItemsProductsDescription</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteCartItemsOrderedItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteCartItemsProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteCartItems</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteCartItemsProductImages</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listCartItemsProductImages</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteCartItemsVendorLocations
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteCartItemsCustomerProfile
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editCartItemsOrderedItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveCartItemsProductImages</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/indexCartItems</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveCartItemsCustomerProfile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteCartItems</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newCartItemsCustomerProfile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectCartItemsVendorLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteCartItemsVendorLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newCartItems</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteCartItemsProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editCartItemsProductsDescription</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteCartItemsProductsDescription
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectCartItemsProductsDescription</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editCartItemsProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveCartItemsOrderedItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newCartItemsVendorLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editCartItems</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteCartItemsProductsDescription</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newCartItemsProductImages</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteCartItemsOrderedItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectCartItemsProductImages</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editCartItemsVendorLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listCartItemsCustomerProfile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectCartItemsCustomerProfile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveCartItemsProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editCartItemsProductImages</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newCartItemsProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteCartItemsCustomerProfile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listProductsProductImageses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteProductsProductsFeedbacks</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editProductsVendorProfile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteProductsProductsDescriptions</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteProductsProductsDescriptions
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listProductsProductsCategory</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectProductsProductsCategory</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectProductsCartItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editProductsProductImageses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectProductsProductImageses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveProductsProductsFeedbacks</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectProductsVendorProfile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newProductsProductImageses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newProductsProductsRatings</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listProductsVendorProfile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteProductsVendorProfile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editProductsProductsDescriptions</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteProductsVendorProfile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteProductsProductsRatings</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/indexProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveProductsProductImageses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newProductsVendorProfile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectProductsProductsDescriptions</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteProductsProductsFeedbacks
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveProductsVendorProfile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newProductsProductsCategory</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editProductsProductsCategory</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteProductsProductsCategory</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editProductsProductsRatings</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listProductsVendorLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteProductsVendorLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteProductsProductsCategory
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editProductsVendorLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listProductsCartItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveProductsProductsRatings</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editProductsCartItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newProductsProductsDescriptions</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveProductsCartItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteProductsProductsRatings</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteProductsCartItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveProductsProductsCategory</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteProductsVendorLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editProductsProductsFeedbacks</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newProductsCartItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveProductsProductsDescriptions</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectProductsVendorLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listProductsProductsRatings</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteProductsProductImageses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newProductsVendorLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectProductsProductsFeedbacks</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newProductsProductsFeedbacks</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listProductsProductsDescriptions</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteProductsCartItemses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectProductsProductsRatings</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteProductsProductImageses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveProductsVendorLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listProductsProductsFeedbacks</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newUsCountiesUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/deleteUsCountiesVendorOrganizationses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveUsCountiesUsCitieses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newUsCountiesUsCitieses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteUsCountiesUsCitieses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listUsCountiesUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteUsCountiesRecipientLocations
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectUsCountiesVendorLocationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveUsCountiesRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newUsCountiesCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editUsCountiesUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteUsCountiesRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectUsCountiesRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteUsCountiesVendorLocationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editUsCountiesRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteUsCountiesVendorOrganizationses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveUsCountiesVendorLocationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteUsCountiesCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteUsCountiesUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteUsCountiesCustomerProfiles
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listUsCountiesCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listUsCountiesRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/selectUsCountiesVendorOrganizationses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listUsCountiesUsCitieses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveUsCountiesUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editUsCountiesUsCitieses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listUsCountiesVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectUsCountiesUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editUsCountiesVendorLocationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editUsCountiesVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveUsCountiesCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectUsCountiesCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveUsCountiesVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteUsCountiesUsCitieses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listUsCountiesVendorLocationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newUsCountiesVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteUsCountiesUsStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteUsCountiesVendorLocationses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectUsCountiesUsCitieses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newUsCountiesVendorLocationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newUsCountiesRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editUsCountiesCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/indexUsCounties</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteShipmentDetails</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newShipmentDetailsRecipientLocation</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveShipmentDetailsRecipientLocation</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listShipmentDetailsRecipientLocation</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/indexShipmentDetails</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editShipmentDetailsRecipientLocation</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteShipmentDetailsOrderRequest</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveShipmentDetailsOrderRequest</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteShipmentDetailsRecipientLocation
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectShipmentDetailsOrderRequest</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editShipmentDetails</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newShipmentDetails</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveShipmentDetails</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteShipmentDetails</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editShipmentDetailsOrderRequest</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectShipmentDetails</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newShipmentDetailsOrderRequest</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteShipmentDetailsOrderRequest
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listShipmentDetailsOrderRequest</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/deleteShipmentDetailsRecipientLocation
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/selectShipmentDetailsRecipientLocation
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editOrderedItemsCartItems</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editOrderedItems</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteOrderedItemsOrderRequest</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectOrderedItemsOrderRequest</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/indexOrderedItems</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newOrderedItemsCartItems</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteOrderedItems</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteOrderedItemsOrderRequest
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveOrderedItemsOrderRequest</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listOrderedItemsOrderRequest</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectOrderedItems</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newOrderedItems</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveOrderedItems</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editOrderedItemsOrderRequest</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newOrderedItemsOrderRequest</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveOrderedItemsCartItems</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listOrderedItemsCartItems</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectOrderedItemsCartItems</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteOrderedItemsCartItems</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteOrderedItemsCartItems</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteOrderedItems</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteProductsCategory</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteProductsCategoryProductses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editProductsCategoryProductsBrands</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editProductsCategory</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveProductsCategory</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listProductsCategoryProductses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteProductsCategory</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editProductsCategoryProductses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newProductsCategoryProductsBrands</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteProductsCategoryProductsBrands</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listProductsCategoryProductsBrands</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveProductsCategoryProductses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveProductsCategoryProductsBrands</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/indexProductsCategory</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newProductsCategory</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectProductsCategoryProductsBrands</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectProductsCategory</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteProductsCategoryProductses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newProductsCategoryProductses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteProductsCategoryProductsBrands
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectProductsCategoryProductses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveIndDistrictVendorLocationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newIndDistrictVendorLocationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteIndDistrictIndCitieses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newIndDistrictCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listIndDistrictIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectIndDistrictIndCitieses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectIndDistrictCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listIndDistrictCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editIndDistrictRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newIndDistrictVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newIndDistrictIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectIndDistrictVendorLocationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newIndDistrictIndCitieses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editIndDistrictCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newIndDistrictRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteIndDistrictCustomerProfiles
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteIndDistrictIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteIndDistrictVendorLocationses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listIndDistrictVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteIndDistrictVendorLocationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteIndDistrictRecipientLocations
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveIndDistrictRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/deleteIndDistrictVendorOrganizationses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectIndDistrictRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/indexIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteIndDistrictCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listIndDistrictIndCitieses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editIndDistrictVendorLocationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveIndDistrictCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteIndDistrictIndCitieses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listIndDistrictRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listIndDistrictVendorLocationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveIndDistrictVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveIndDistrictIndCitieses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editIndDistrictIndCitieses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editIndDistrictVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteIndDistrictIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editIndDistrictIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveIndDistrictIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteIndDistrictRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectIndDistrictIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/selectIndDistrictVendorOrganizationses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteIndDistrictVendorOrganizationses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listIndCitiesIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveIndCitiesIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listIndCitiesRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteIndCitiesRecipientLocations
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteIndCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteIndCitiesVendorLocationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listIndCitiesCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editIndCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newIndCitiesCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listIndCitiesVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/indexIndCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newIndCitiesVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteIndCitiesIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newIndCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteIndCitiesIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteIndCitiesVendorLocationses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectIndCitiesRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveIndCitiesVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectIndCitiesVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listIndCitiesIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listIndCitiesVendorLocationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveIndCitiesVendorLocationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectIndCitiesIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectIndCitiesVendorLocationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectIndCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editIndCitiesVendorLocationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveIndCitiesIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteIndCitiesCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveIndCitiesRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteIndCitiesRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editIndCitiesIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editIndCitiesCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newIndCitiesVendorLocationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newIndCitiesIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteIndCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteIndCitiesVendorOrganizationses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editIndCitiesRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteIndCitiesIndDistrict</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveIndCitiesCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectIndCitiesCustomerProfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveIndCities</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newIndCitiesRecipientLocations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteIndCitiesIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editIndCitiesIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteIndCitiesCustomerProfiles
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newIndCitiesIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editIndCitiesVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteIndCitiesVendorOrganizationses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectIndCitiesIndStates</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/editOrderRequestStatusesOrderRequests
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newOrderRequestStatuses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteOrderRequestStatusesOrderRequests
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/listOrderRequestStatusesOrderRequests
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/selectOrderRequestStatusesOrderRequests
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteOrderRequestStatuses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editOrderRequestStatuses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/deleteOrderRequestStatusesOrderRequests
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/saveOrderRequestStatusesOrderRequests
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newOrderRequestStatusesOrderRequests</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectOrderRequestStatuses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveOrderRequestStatuses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteOrderRequestStatuses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/indexOrderRequestStatuses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editProductsBrand</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeleteProductsBrandProductsCategory
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/confirmDeleteProductsBrand</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newProductsBrand</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/indexProductsBrand</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveProductsBrandProductsCategory</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/listProductsBrandProductsCategory</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/saveProductsBrand</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteProductsBrand</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectProductsBrand</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/selectProductsBrandProductsCategory</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/deleteProductsBrandProductsCategory</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/editProductsBrandProductsCategory</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp Servlet</servlet-name>
+		<url-pattern>/newProductsBrandProductsCategory</url-pattern>
+	</servlet-mapping>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:applicationContext.xml</param-value>
+	</context-param>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
